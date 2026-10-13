@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilton Palace Hotel</title>
+    
+    <!-- Instant redirect to Hilton.html -->
+    <meta http-equiv="refresh" content="0; url=Hilton.html">
+    
+    <!-- Canonical link for search engines -->
+    <link rel="canonical" href="Hilton.html">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a2a5e;
+            color: white;
+            text-align: center;
+        }
+        .loader {
+            max-width: 400px;
+            padding: 20px;
+        }
+        .loader h1 {
+            color: #c9a84c;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .loader p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.2);
+            border-top: 4px solid #c9a84c;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #c9a84c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <h1>HILTON PALACE HOTEL</h1>
+        <div class="spinner"></div>
+        <p>Loading your experience...</p>
+        <p><a href="Hilton.html">Click here if you're not redirected</a></p>
+    </div>
+
+    <script>
+        // Instant redirect via JavaScript (backup to meta refresh)
+        window.location.replace("Hilton.html");
+    </script>
+</body>
+</html>
