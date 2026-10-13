@@ -1,0 +1,163 @@
+:root {
+    --primary-blue: #1a2a5e;
+    --gold: #c9a84c;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+    --success-green: #25D366;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 15px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--gold);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #d1d5db;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main { max-width: 800px; margin: 0 auto; padding: 0 15px; }
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin: 30px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gold);
+    text-transform: uppercase;
+}
+
+.menu-item {
+    background: var(--white);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid transparent;
+    transition: border 0.2s;
+}
+
+.menu-item:hover { border-left: 4px solid var(--gold); }
+.item-info { flex: 1; padding-right: 15px; }
+.item-name { font-weight: 700; color: var(--primary-blue); font-size: 1rem; }
+.item-desc { font-size: 0.8rem; color: var(--text-light); margin-top: 3px; }
+.item-price { font-weight: 700; color: var(--text-dark); white-space: nowrap; }
+.item-controls { display: flex; align-items: center; gap: 10px; margin-left: 15px; }
+
+.qty-btn {
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    transition: all 0.2s;
+}
+
+.qty-btn:hover { background: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+.qty-display { font-weight: 700; min-width: 20px; text-align: center; font-size: 1.1rem; }
+
+#booking-section {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-top: 40px;
+    border-top: 5px solid var(--primary-blue);
+}
+
+#booking-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+#order-summary {
+    background: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px dashed var(--border-color);
+}
+
+.empty-cart { color: var(--text-light); font-style: italic; text-align: center; margin: 0; }
+.summary-item { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+.summary-item:last-child { border-bottom: none; }
+
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 5px; color: var(--primary-blue); }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px;
+    font-family: 'Lato', sans-serif; font-size: 1rem; transition: border 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 2px rgba(26, 42, 94, 0.1); }
+
+.total-box {
+    background: var(--primary-blue); color: var(--white); padding: 15px; border-radius: 6px;
+    text-align: right; font-size: 1.2rem; margin: 20px 0; display: flex;
+    justify-content: space-between; align-items: center;
+}
+
+#grand-total { color: var(--gold); font-weight: 700; font-size: 1.5rem; }
+
+#submit-btn {
+    width: 100%; padding: 16px; background-color: var(--success-green); color: var(--white);
+    border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center;
+}
+
+#submit-btn:hover { background-color: #1ebe5d; }
+#submit-btn:disabled { background-color: #ccc; cursor: not-allowed; }
+
+@media (max-width: 500px) {
+    .menu-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .item-controls { margin-left: 0; width: 100%; justify-content: flex-end; }
+    .total-box { flex-direction: column; align-items: flex-end; gap: 5px; }
+}
+/* --- ADD THIS TO THE BOTTOM OF YOUR CSS FILE --- */
+.hotel-logo {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 8px;
+    background-color: white; /* Ensures logo stands out if it has a transparent background */
+    padding: 5px;
+}
