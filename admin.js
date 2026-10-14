@@ -204,7 +204,7 @@ function renderOrders() {
 }
 
 // ============================================
-// UPDATE STATS
+// UPDATE STATS (NOW WITH PAID SALES)
 // ============================================
 function updateStats() {
     const now = new Date();
@@ -215,12 +215,25 @@ function updateStats() {
         const d = o.createdAt && o.createdAt.toDate ? o.createdAt.toDate() : null;
         return d && d >= todayStart;
     }).length;
+
+    // Total Revenue = all orders (any status)
     const revenue = allOrders.reduce((sum, o) => sum + (o.total || 0), 0);
+
+    // NEW: Total Paid Sales = only completed orders
+    const paidSales = allOrders
+        .filter(o => o.status === 'completed')
+        .reduce((sum, o) => sum + (o.total || 0), 0);
+
+    // NEW: Total Cancelled count
+    const cancelledCount = allOrders.filter(o => o.status === 'cancelled').length;
+
+    // Total guests
     const guests = allOrders.reduce((sum, o) => sum + (o.guests || 0), 0);
 
     document.getElementById('stat-total').textContent = total;
     document.getElementById('stat-today').textContent = today;
     document.getElementById('stat-revenue').textContent = CURRENCY + revenue.toLocaleString();
+    document.getElementById('stat-paid').textContent = CURRENCY + paidSales.toLocaleString();
     document.getElementById('stat-guests').textContent = guests;
 }
 
@@ -251,5 +264,4 @@ async function markCancelled(orderId) {
     } catch (err) {
         alert("Error updating order: " + err.message);
     }
-}
-
+        }
