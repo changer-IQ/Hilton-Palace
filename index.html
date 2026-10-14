@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilton Palace Hotel - Order & Reserve</title>
+    <link rel="stylesheet" href="Hilton.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F42GC445V5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F42GC445V5');
+    </script>
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg" alt="Hilton Palace Hotel Logo" class="hotel-logo">
+        <h1>HILTON PALACE HOTEL</h1>
+        <p>Pre-Order & Table Reservation</p>
+    </header>
+
+    <main>
+        <div id="category-nav" class="category-nav"></div>
+        <div id="menu-container"></div>
+
+        <div id="booking-section">
+            <h2>Your Order & Reservation</h2>
+            
+            <div id="order-summary">
+                <p class="empty-cart">Your cart is empty. Add plates from the menu above.</p>
+            </div>
+
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="guests">Number of Guests Arriving *</label>
+                    <input type="number" id="guests" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="arrival-date">Arrival Date *</label>
+                    <input type="date" id="arrival-date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="arrival-time">Arrival Time *</label>
+                    <input type="time" id="arrival-time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-name">Your Name *</label>
+                    <input type="text" id="customer-name" placeholder="e.g. ThankGOD" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-phone">Your Phone Number *</label>
+                    <input type="tel" id="customer-phone" placeholder="e.g. 08012345678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-email">Email (optional — for menu updates)</label>
+                    <input type="email" id="customer-email" placeholder="e.g. ada@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Special Requests / Notes</label>
+                    <textarea id="notes" rows="2" placeholder="e.g. One plate no pepper..."></textarea>
+                </div>
+
+                <div class="total-box">
+                    <strong>Estimated Total: </strong>
+                    <span id="grand-total">₦0</span>
+                </div>
+
+                <button type="submit" id="submit-btn">Send Order via WhatsApp</button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="Hilton.js"></script>
+</body>
+</html>
