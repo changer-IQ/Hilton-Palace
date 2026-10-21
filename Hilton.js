@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const WHATSAPP_NUMBER = "2348100158158";
+const WHATSAPP_NUMBER = "2348037125426";
 const CURRENCY = "₦";
 
 const menuData = rawMenu.map(cat => ({
