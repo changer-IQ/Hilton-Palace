@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hilton Palace Hotel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen">
+        <div class="login-box">
+            <h1>HILTON PALACE HOTEL</h1>
+            <p class="subtitle">Admin Dashboard</p>
+            
+            <div class="error-msg" id="error-msg"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary" id="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- DASHBOARD SCREEN -->
+    <div id="dashboard-screen">
+        <div class="dashboard-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p id="user-email">Loading...</p>
+            </div>
+            <button class="btn-logout" id="logout-btn">Logout</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">Total Orders</div>
+                <div class="value" id="stat-total">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Today's Orders</div>
+                <div class="value" id="stat-today">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Total Revenue</div>
+                <div class="value" id="stat-revenue">₦0</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Total Guests</div>
+                <div class="value" id="stat-guests">0</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Orders</button>
+            <button class="filter-btn" data-filter="today">Today</button>
+            <button class="filter-btn" data-filter="week">This Week</button>
+            <button class="filter-btn" data-filter="month">This Month</button>
+        </div>
+
+        <div class="orders-container" id="orders-container">
+            <div class="loading">Loading orders...</div>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
